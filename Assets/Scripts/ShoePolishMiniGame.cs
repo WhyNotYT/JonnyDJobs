@@ -25,16 +25,71 @@ public class ShoePolishMiniGame : MonoBehaviour
 	public float startTime;
 	public bool started;
 	public int target;
+	public TMP_Text gameOverTitle;
+
+	private bool Win;
 	private Vector3 lastPoint;
+
 
 	private void over()
 	{
+
+		if(maxTime > (Time.time - startTime))
+		{
+			Win = true;
+		}
+		else
+		{
+			if(target - doneAmount == 0)
+			{
+				Win = true;
+			}
+		}
+
+		if(Win)
+		{
+			gameOverTitle.text = "Nice JOB!";
+		}
+		else
+		{
+			gameOverTitle.text = "You Failed The JOB.";
+		}
 
 		timeText.text = "0:00";
 		missedText.text = (target - doneAmount).ToString();
 		gameOver.SetActive(true);
 		started = false;
 	}
+
+
+
+
+
+	public void next()
+	{
+		if (Win)
+		{
+			if (PlayerPrefs.GetInt("Endless") == 1)
+			{
+				FindObjectOfType<MainMenuManager>().LoadScene("FlyMiniGame");
+			}
+			else
+			{
+
+				FindObjectOfType<MainMenuManager>().LoadScene("CutScene3");
+			}
+		}
+		else
+		{
+
+			FindObjectOfType<MainMenuManager>().LoadScene("MainMenu");
+		}
+	}
+
+
+
+
+
 	private void Update()
 	{
 		if (started)
@@ -88,9 +143,20 @@ public class ShoePolishMiniGame : MonoBehaviour
 		}
 		else
 		{
-			if(Input.GetKeyUp(KeyCode.Return))
+			if (!gameOver.activeInHierarchy)
 			{
-				startGame();
+				if (Input.GetKeyUp(KeyCode.Return))
+				{
+					startGame();
+				}
+			}
+			else
+			{
+
+				if (Input.GetKeyUp(KeyCode.Return))
+				{
+					next();
+				}
 			}
 		}
 	}
@@ -104,8 +170,17 @@ public class ShoePolishMiniGame : MonoBehaviour
 
 	private void Start()
 	{
-		targetText.text = target.ToString();
+
+		if (PlayerPrefs.GetInt("Endless") == 1)
+		{
+			maxTime = Mathf.RoundToInt(maxTime * (1f + ((PlayerPrefs.GetInt("difficulty") * 0.5f))));
+			target = Mathf.RoundToInt(target * (1f + (PlayerPrefs.GetInt("difficulty") * 0.5f)));
+		}
+		targetText.text = (target + 1).ToString();
 		spawnShoe();
+
+
+
 	}
 	public void toggleCotton()
 	{

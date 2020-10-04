@@ -6,9 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ShoePolishMiniGame.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
+    path: Assets/Scenes/MainMenu.unity
+    guid: 8646b9cf370f7ce4394e33b01bf36f63
+  - enabled: 1
+    path: Assets/Scenes/CutScene1.unity
+    guid: 6d40bc519c35c4c419a7cf8a02822be4
+  - enabled: 1
     path: Assets/Scenes/LoliPopMiniGame.unity
     guid: e87f6a07da57c4e4ebc0d3a2e0d4dae4
+  - enabled: 1
+    path: Assets/Scenes/ShoePolishMiniGame.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/FlyMiniGame.unity
+    guid: b6cd2c58611a9794ab9facd69c10de78
+  - enabled: 1
+    path: Assets/Scenes/CutScene2.unity
+    guid: a9ee0b3fe8607a74f89072ba824866fd
+  - enabled: 1
+    path: Assets/Scenes/CutScene3.unity
+    guid: 421af9d13b787084692987eb455d1946
+  - enabled: 1
+    path: Assets/Scenes/CutScene4.unity
+    guid: d998076b54041bd4892b905d2fafbf4b
   m_configObjects: {}

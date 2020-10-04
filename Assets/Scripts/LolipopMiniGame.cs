@@ -21,13 +21,23 @@ public class LolipopMiniGame : MonoBehaviour
 	public int maxTime;
 	public GameObject gameOverDisplay;
 	public GameObject startGameDisplay;
-	private int startTime;
-	
-
-
+	private float startTime;
+	private bool Win;
+	public TMP_Text gameOverTitleText;
+	private void Start()
+	{
+		Debug.Log(PlayerPrefs.GetInt("difficulty"));
+		if (PlayerPrefs.GetInt("Endless") == 1)
+		{
+			maxTime = Mathf.RoundToInt(maxTime * (1f + ((PlayerPrefs.GetInt("difficulty") * 0.5f))));
+			
+			spawnInterval = spawnInterval / (1 + (PlayerPrefs.GetInt("difficulty") * 0.1f));
+		}
+	}
 
 	public void startGame()
 	{
+		startTime = Time.time;
 		startGameDisplay.SetActive(false);
 		started = true;
 	}
@@ -60,9 +70,20 @@ public class LolipopMiniGame : MonoBehaviour
 			}
 			else
 			{
+				if(Mathf.Abs(amount - amountCounted) < 5)
+				{
+					Win = true;
+					gameOverTitleText.text = "Nice Job!";
+				}
+				else
+				{
+					Win = false;
+					gameOverTitleText.text = "You Falied The Job.";
+				}
 				timeText.text = "0:00";
 				gameOverDisplay.SetActive(true);
 				AccuracyText.text = Mathf.Abs(amount - amountCounted).ToString();
+				started = false;
 				//Time.timeScale = 0;
 
 			}
@@ -82,19 +103,54 @@ public class LolipopMiniGame : MonoBehaviour
 		}
 		else
 		{
-			if(Input.GetMouseButtonUp(0))
+			if (!gameOverDisplay.activeInHierarchy)
 			{
-				startGame();
-			}
+				if (Input.GetMouseButtonUp(0))
+				{
+					startGame();
+				}
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
 
-			if(Input.GetKeyDown(KeyCode.Return))
-			{
-				startGame();
-			}
+				if (Input.GetKeyUp(KeyCode.Return))
+				{
+					startGame();
+				}
 #endif
+			}
+			else
+			{
+				if(Input.GetKeyUp(KeyCode.Return))
+				{
+					next();
+				}
+			}
 		}
 	}
+
+
+	public void next()
+	{
+		if (Win)
+		{
+			if (PlayerPrefs.GetInt("Endless") == 1)
+			{
+				FindObjectOfType<MainMenuManager>().LoadScene("ShoePolishMiniGame");
+				//PlayerPrefs.SetInt("difficulty", PlayerPrefs.GetInt("difficulty") + 1);
+			}
+			else
+			{
+				FindObjectOfType<MainMenuManager>().LoadScene("CutScene2");
+			}
+		}
+		else
+		{
+
+			FindObjectOfType<MainMenuManager>().LoadScene("MainMenu");
+		}
+	}
+
+
+
 	public void subtract()
 	{
 		amountCounted--;

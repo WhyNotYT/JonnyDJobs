@@ -108,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3761160229994038207}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02427578, y: 0.84495026, z: -2.2111292}
+  m_LocalPosition: {x: -0.02427578, y: 0.84495026, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3761160230810973233}
@@ -220,6 +220,7 @@ MonoBehaviour:
   hp: 0
   maxHp: 0
   dried: 0
+  toggleCottonOnce: 0
 --- !u!61 &3761160230311305922
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -292,7 +293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3761160230740442195}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.024275899, y: 0.84495026, z: -2.2111292}
+  m_LocalPosition: {x: -0.024275899, y: 0.84495026, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3761160229321979761}
