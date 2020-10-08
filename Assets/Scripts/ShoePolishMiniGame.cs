@@ -26,7 +26,7 @@ public class ShoePolishMiniGame : MonoBehaviour
 	public bool started;
 	public int target;
 	public TMP_Text gameOverTitle;
-
+	public AudioSource dryerAudio;
 	private bool Win;
 	private Vector3 lastPoint;
 
@@ -92,6 +92,12 @@ public class ShoePolishMiniGame : MonoBehaviour
 
 	private void Update()
 	{
+		if (Input.GetKeyUp(KeyCode.Escape))
+		{
+
+			FindObjectOfType<MainMenuManager>().LoadScene("MainMenu");
+		}
+
 		if (started)
 		{
 			if (maxTime > (Time.time - startTime))
@@ -197,6 +203,7 @@ public class ShoePolishMiniGame : MonoBehaviour
 	{
 		//spawnShoe();
 		dryParticle.Play();
+		dryerAudio.Play();
 	}
 	void spawnShoe()
 	{

@@ -9,7 +9,10 @@ public class Lolipop : MonoBehaviour
 
 
 
-
+	void PlayAudio()
+	{
+		this.GetComponent<AudioSource>().Play();
+	}
 	void CallAdd()
 	{
 		FindObjectOfType<LolipopMiniGame>().amount++;

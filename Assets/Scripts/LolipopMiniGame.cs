@@ -44,6 +44,14 @@ public class LolipopMiniGame : MonoBehaviour
 
 	private void Update()
 	{
+
+		if(Input.GetKeyUp(KeyCode.Escape))
+		{
+
+			FindObjectOfType<MainMenuManager>().LoadScene("MainMenu");
+		}
+
+
 		if (started)
 		{
 			if (maxTime > (Time.time - startTime))

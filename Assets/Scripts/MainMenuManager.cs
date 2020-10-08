@@ -24,7 +24,7 @@ public class MainMenuManager : MonoBehaviour
 	{
 		sceneToLoad = name;
 		loadTransition.SetActive(true);
-		Invoke("Load", 1f);
+		Invoke("Load", 0.5f);
 	}
 
 	public void setPlayerPrefStr(string name)
