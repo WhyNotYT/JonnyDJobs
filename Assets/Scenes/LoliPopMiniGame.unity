@@ -413,7 +413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &191857395
 RectTransform:
   m_ObjectHideFlags: 0
@@ -431,8 +431,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -141}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -119.252}
+  m_SizeDelta: {x: 160, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &191857396
 MonoBehaviour:
@@ -509,8 +509,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 7d1c36f129d83da4fb4cc7148939b9bb, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -777,7 +777,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next
+  m_text: Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1690,7 +1690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 315.29, y: -10.5}
+  m_AnchoredPosition: {x: 315.29, y: 119.98799}
   m_SizeDelta: {x: 116.44531, y: 58.480698}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &683208578
@@ -1713,9 +1713,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Use This
-
-    Or Arrow Keys'
+  m_text: Use This To Input The Number
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 248a74787dbbb11438f1da062d48c2d1, type: 2}
   m_sharedMaterial: {fileID: 342580582501093261, guid: 248a74787dbbb11438f1da062d48c2d1, type: 2}
@@ -1742,7 +1740,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
+  m_fontSize: 24.4
   m_fontSizeBase: 47.21
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2567,9 +2565,7 @@ MonoBehaviour:
   m_text: 'Count The Number Of Good Lolipops That Pass Through.
 
 
-
-    Press ''Enter''
-    To Start'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 248a74787dbbb11438f1da062d48c2d1, type: 2}
   m_sharedMaterial: {fileID: 342580582501093261, guid: 248a74787dbbb11438f1da062d48c2d1, type: 2}
@@ -2997,7 +2993,7 @@ MonoBehaviour:
   loliPopNotOK: {fileID: 996653955226183023, guid: 015f1e6e1275a8247babca332b25d64b, type: 3}
   started: 0
   spawnChance: 3
-  spawnInterval: 0.75
+  spawnInterval: 1.5
   spawnPoint: {fileID: 6416553214956213974}
   maxTime: 15
   gameOverDisplay: {fileID: 639614332}
